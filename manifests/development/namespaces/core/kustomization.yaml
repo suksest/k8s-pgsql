@@ -4,4 +4,3 @@ namespace: core
 
 resources:
 - namespace.yaml
-- postgres
