@@ -25,6 +25,8 @@ spec:
         volumeMounts:
           - mountPath: /var/lib/postgresql/data
             name: postgres-pvc
+          - mountPath: /etc/postgresql
+            name: postgres-config-volume
         resources:
           limits:
             memory: "4Gi"
@@ -32,6 +34,13 @@ spec:
           requests:
             memory: "2Gi"
             cpu: "1"
+      volumes:
+        - name: postgres-config-volume
+          configMap:
+            name: postgres-config
+            items:
+            - key: postgresql.conf
+              path: postgresql.conf
   volumeClaimTemplates:
   - metadata:
       name: postgres-pvc
