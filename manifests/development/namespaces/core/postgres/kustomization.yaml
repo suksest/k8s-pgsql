@@ -4,4 +4,5 @@ namespace: core
 
 resources:
 - secret.yaml
+- configmap.yaml
 - statefulset.yaml
