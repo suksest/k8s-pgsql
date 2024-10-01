@@ -3,5 +3,6 @@ kind: Kustomization
 namespace: core
 
 resources:
-- namespace.yaml
-- postgres
+- secret.yaml
+- configmap.yaml
+- statefulset.yaml
